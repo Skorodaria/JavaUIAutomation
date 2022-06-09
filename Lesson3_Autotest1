@@ -1,0 +1,29 @@
+package org.example.lesson3;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Autotest1 {
+    public static void main(String[] args) throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+
+        WebDriver webDriver = new ChromeDriver();
+        webDriver.get("https://rivegauche.ru/");
+
+        WebElement BrandGuerlain = webDriver.findElement(By.xpath("//a[@href='/brands/guerlain']"));
+         BrandGuerlain.click();
+
+        Thread.sleep(5000);
+
+       WebElement Parfum = webDriver.findElement(By.xpath("//li[@class='ng-star-inserted']"));
+       Parfum.click();
+
+        Thread.sleep(6000);
+
+        webDriver.quit();
+    }
+
+}
