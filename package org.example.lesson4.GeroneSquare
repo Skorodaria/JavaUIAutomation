@@ -1,0 +1,15 @@
+package org.example.lesson4;
+
+public class GeroneSquare {
+
+    public static void main(String[] args) {
+
+        System.out.println(geroneSquare(13, 18, 12));
+
+    }
+
+    public static int geroneSquare(int a, int b, int c) {
+        int p = (a + b + c) / 2;
+        return (int) Math.sqrt(p * (p - a) * (p - b) * (p - c));
+
+    }
